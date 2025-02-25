@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="3">
+        <file>
+            <url>src/ajedrezjava/chargeMoves.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>1252</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/connection/Leer.java</url>
+            <bookmark id="3">
+                <name/>
+                <line>34</line>
+                <key/>
+            </bookmark>
+            <bookmark id="2">
+                <name/>
+                <line>155</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/Memeverso/Sistemas_Distribuidos/29-08-2019/AjedrezJava/src/ajedrezjava/mainFrame.java</file>
+            <file>file:/D:/Memeverso/Sistemas_Distribuidos/29-08-2019/AjedrezJava/src/ajedrezjava/loadPieces.java</file>
+            <file>file:/D:/Memeverso/Sistemas_Distribuidos/29-08-2019/AjedrezJava/src/connection/Escribir.java</file>
+            <file>file:/D:/Memeverso/Sistemas_Distribuidos/29-08-2019/AjedrezJava/src/connection/Leer.java</file>
+            <file>file:/D:/Memeverso/Sistemas_Distribuidos/29-08-2019/AjedrezJava/src/connection/Register.java</file>
+        </group>
+    </open-files>
+</project-private>

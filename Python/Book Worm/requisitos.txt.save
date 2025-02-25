@@ -1,0 +1,23 @@
+Se guardarán libros:
+-id_libro
+-Nombre del Libro
+-Número de páginas
+-Directorio\es (separado por :)
+-Edición\es (separado por :)
+-Volumen (yes or no) y número
+
+-Editorial (tabla de editoriales)
+*id_edit
+*nom_edit
+
+-Autor o autores (tabla de Autores)
+*id_aut
+*nom_aut
+
+-ISBN (tabla de ISBN)
+*id_isbn
+*nom_isbn
+
+-Categorías (tabla de categorías)
+*id_cat
+*nom_cat

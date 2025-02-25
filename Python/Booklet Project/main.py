@@ -1,8 +1,11 @@
 import tkinter as tk
-import pdf_methods
+import pdf_methods as pm
 
 window_height = 900
 window_width = 1400
+
+#Número que determina número de páginas de un booklet, ideal entre 6 y 10 
+size_booklet = 6
 
 class App(tk.Frame):
     def __init__(self, master):
@@ -38,6 +41,7 @@ class App(tk.Frame):
 
 if __name__ == "__main__":
     #Window configuration
+    """
     root = tk.Tk()
     screen_height = root.winfo_screenheight()
     screen_width = root.winfo_screenwidth()
@@ -48,4 +52,7 @@ if __name__ == "__main__":
     #Window Init
     myapp = App(root)
     myapp.mainloop()
-    
+    """
+    route = '/home/cristoalvarado/Documents/Books To Print/Libro Mau 1/test_1.pdf'
+    output = '/home/cristoalvarado/Documents/Books To Print/Libro Mau 1/output.pdf'
+    pm.resize_pdf(route,output,size_booklet)
