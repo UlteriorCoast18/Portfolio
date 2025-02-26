@@ -72,7 +72,7 @@ class App(tk.Frame):
             state="readonly",
             values = ["A1","A2","A3","A4","A5","A6"]
         )
-        self.combo_size.grid(row=5, column=1, sticky="nsew", padx=5, pady=5)
+        self.combo_size.grid(row=6, column=1, sticky="nsew", padx=5, pady=5)
 
         #Canva Draw
         self.pdf_display = tk.Canvas(self, width=image_escale *148, height=image_escale *210, background="white")
@@ -85,7 +85,7 @@ class App(tk.Frame):
 
         #Clear Canva
         self.clea_pdf_display = tk.Button(self, text='Clear Lines', command=lambda: self.pdf_display.delete('lines'))
-        self.clea_pdf_display.grid(row=6, column=1, sticky="nsew", padx=5, pady=5)
+        self.clea_pdf_display.grid(row=7, column=1, sticky="nsew", padx=5, pady=5)
         
     def open_file_dialog(self):
         file_path = filedialog.askopenfilename(initialdir="/home/cristoalvarado/Documents/Books To Print/", title="Select a PDF", filetypes=[("PDF", "*.pdf"), ("All files", "*.*")])
