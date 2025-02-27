@@ -47,7 +47,7 @@ class App(tk.Frame):
         self.direct_button.grid(row=1, column=0, sticky="nsew", padx=5, pady=5)
         
         #File Directory
-        self.direct_entry = tk.Label(self, text="Vacío")
+        self.direct_entry = tk.Label(self, text="Empty")
         self.direct_entry.grid(row=1, column=1, sticky="nsew", padx=5, pady=5)
 
         #Operations Label

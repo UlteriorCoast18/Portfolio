@@ -18,6 +18,7 @@ Book Worm is a project developed in **Python** and **SQLite** with the aim of pr
 
 Booklet Maker is a project developed in **Python** with the goal of providing a tool for users to crop, join, resize and prepare PDF's. The main functionality of the project is prepare a PDF for booklet type impresion, that is, prepare it to bookbinding. The project is still in construction but there are some previews of the project:
 
+![/assets/images/booklet_1.png]
 
 
 ## Rubik's Cube Solver
