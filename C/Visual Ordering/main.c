@@ -12,7 +12,7 @@ Programa de ALvarado Cristo Daniel
 
 #define ROW	25
 #define COL	80
-#define TIEMPO	3000
+#define TIEMPO	1
 
 typedef struct _pantalla_{
 	int m, n;
@@ -163,7 +163,7 @@ int ordenamientoIntercambioDirecto(int arreglo[], int n, Pantalla *P){
 				arreglo[j] = arreglo[j - 1];
 				arreglo[j - 1] = aux;
 				/**/
-				system("cls");
+				system("clear");
 				cambiaColumnasPantalla(P, j, j - 1);
 				printf("\nOrdenamiento Intercambio Directo:\n");
 				imprimePantalla(*P);
@@ -191,7 +191,7 @@ int ordenamientoSeleccionDirecta(int arreglo[], int n, Pantalla *P){
 		arreglo[j_aux] = aux;
 		/**/
 		cambiaColumnasPantalla(P, i, j_aux);
-		system("cls");
+		system("clear");
 		printf("\nOrdenamiento Seleccion directa:\n");
 		imprimePantalla(*P);
 		sleep_ms(200); //poner en 200
@@ -214,7 +214,7 @@ int ordenamientoInsercionDirecta(int arreglo[], int n, Pantalla *P){
 				/**/
 				generaPantalla(P, arreglo, n);
 				cambiaColumnasPantalla(P, k, j);
-				system("cls");
+				system("clear");
 				printf("\nOrdenamiento Insercion directa:\n");
 				imprimePantalla(*P);
 				sleep_ms(150); //150
@@ -236,7 +236,7 @@ int ordenamientoShellsort(int arreglo[], int n, Pantalla *P){
 				arreglo[j] = aux;
 				/**/
 				cambiaColumnasPantalla(P, j, j + i);
-				system("cls");
+				system("clear");
 				printf("\nOrdenamiento Shellsort:\n");
 				imprimePantalla(*P);
 				sleep_ms(150); //150
@@ -261,7 +261,7 @@ int ordenamientoHeapsort(int arreglo[], int n, Pantalla *P){
 		j = valores->i;
 		/**/
 		generaPantalla(P, arreglo, n_aux);
-		system("cls");
+		system("clear");
 		printf("\nOrdenamiento Heapsort:\n");
 		imprimePantalla(*P);
 		sleep_ms(200);//50
@@ -457,21 +457,21 @@ int ordenamientoQuicksort(int arreglo[], int l, int u, Pantalla *P, int n){
 		for(i = l; i <= l + c_i; i++){
 			arreglo[i] = izq[i - l];
 			generaPantalla(P, arreglo, n);
-			system("cls");
+			system("clear");
 			printf("\nOrdenamiento Quicksort:\n");
 			imprimePantalla(*P);
 			sleep_ms(300);//50
 		}
 		arreglo[i] = piv;
 		generaPantalla(P, arreglo, n);
-		system("cls");
+		system("clear");
 		printf("\nOrdenamiento Quicksort:\n");
 		imprimePantalla(*P);
 		sleep_ms(300);//50
 		for(i = 0; i <= c_d; i++){
 			arreglo[l + c_i + 2 + i] = der[i];
 			generaPantalla(P, arreglo, n);
-			system("cls");
+			system("clear");
 			printf("\nOrdenamiento Quicksort:\n");
 			imprimePantalla(*P);
 			sleep_ms(300);//50
@@ -527,7 +527,7 @@ int ordenamientoMergesort(int arreglo[], int l, int u, Pantalla *P, int n){
 		for(i = l; i <= u; i++){
 			arreglo[i] = array_aux[i - l];
 			generaPantalla(P, arreglo, n);
-			system("cls");
+			system("clear");
 			printf("\nOrdenamiento Mergesort:\n");
 			imprimePantalla(*P);
 			sleep_ms(40); //40

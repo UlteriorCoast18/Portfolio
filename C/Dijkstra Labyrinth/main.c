@@ -11,7 +11,7 @@ Programa de Alvarado Cristo Daniel
 #include <string.h>
 #include <errno.h>
 
-#define N	50
+#define N	30
 
 typedef struct _tablero_{
 	char tabla[N][N];
