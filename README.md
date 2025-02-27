@@ -72,16 +72,11 @@ The program is really efficent, not taking longer than a second to solve the maz
 
 This program is greatly inspired in this video by Timo Bingmann:
 
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kPRA0W1kECg?si=UGpkHFSHsComvOM2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</center>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/kPRA0W1kECg/0.jpg)](https://www.youtube.com/watch?v=kPRA0W1kECg)
 
-The program replicates some of the sorting algorithms in the **C** console. Here's a video of the program execution:
+The program replicates some of the sorting algorithms in the **C** console. Here's a video of the execution:
 
-<video width="271" height="473" controls>
-  <source src="assets/videos/sorting_algorithms.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[![IMAGE ALT TEXT HERE](assets/images/sorting_algorithms.png)](https://youtube.com/shorts/Nq1iBdsA_98)
 
 # Java
 
