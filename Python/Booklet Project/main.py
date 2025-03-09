@@ -1,11 +1,13 @@
 import tkinter as tk
-from tkinter import filedialog, ttk
+from tkinter import filedialog, ttk, simpledialog
 from PIL import Image, ImageTk
 import pdf_methods as pm
 import os
+import threading
+import time
 
-window_height = 1000
-window_width = 1600
+window_height = 1100
+window_width = 940
 
 click_num = 0
 x1, y1 ,x2, y2 = 0, 0, 0, 0
@@ -25,46 +27,31 @@ class App(tk.Frame):
         self.master = master
         self.create_widgets()
 
-        """
-        self.entrythingy = tk.Entry()
-        self.entrythingy.pack()
-
-        # Create the application variable.
-        self.contents = tk.StringVar()
-        # Set it to some value.
-        self.contents.set("this is a variable")
-        # Tell the entry widget to watch this variable.
-        self.entrythingy["textvariable"] = self.contents
-
-        # Define a callback for when the user hits return.
-        # It prints the current value of the variable.
-        self.entrythingy.bind('<Key-Return>', self.print_contents)
-        """
-
     def create_widgets(self):
-        #Button choose file
+        #Button choose file and File Directory
         self.direct_button = tk.Button(self, text="File Directory", command=self.open_file_dialog)
-        self.direct_button.grid(row=1, column=0, sticky="nsew", padx=5, pady=5)
-        
-        #File Directory
-        self.direct_entry = tk.Label(self, text="Empty")
-        self.direct_entry.grid(row=1, column=1, sticky="nsew", padx=5, pady=5)
+        self.direct_button.grid(row=1, column=0, sticky="nsew", padx=5, pady=5, columnspan=2)
+
+        #File Location
+        self.direct_label = tk.Label(self, text = "/", justify='center')
+        self.direct_label.grid(row=2, column=0, sticky="nsew", padx=5, pady=5, columnspan=2)
+        self.direct_label.bind('<Configure>', lambda e: self.direct_label.config(wraplength=self.direct_label.winfo_width()))
 
         #Operations Label
-        self.label_operations = tk.Label(self, text="Options")
-        self.label_operations.grid(row=2, column=1, sticky="nsew", padx=5, pady=5)
+        self.label_operations = tk.Label(self, text="OPTIONS")
+        self.label_operations.grid(row=3, column=1, sticky="nsew", padx=5, pady=5)
 
         #Crop Button
-        self.crop_button = tk.Button(self, text="Start Cropping PDF", command=self.show_pdf_to_crop)
-        self.crop_button.grid(row=3, column=1, sticky="nsew", padx=5, pady=5)
+        self.crop_button = tk.Button(self, text="Start Cropping PDF", command=self.show_pdf_to_crop, state = 'disabled')
+        self.crop_button.grid(row=4, column=1, sticky="nsew", padx=5, pady=5)
         
         #Prepare to Booklet PrintJob
-        self.booklet_print = tk.Button(self, text="Prepare PDF to Booklet")
-        self.booklet_print.grid(row=4, column=1, sticky="nsew", padx=5, pady=5)
+        self.booklet_print = tk.Button(self, text="Prepare PDF to Booklet", state = 'disabled', command = self.bookletPDF)
+        self.booklet_print.grid(row=5, column=1, sticky="nsew", padx=5, pady=5)
 
         #Resize PDF
-        self.resize_pdf = tk.Button(self, text="Resize PDF")
-        self.resize_pdf.grid(row=5, column=1, sticky="nsew", padx=5, pady=5)
+        self.resize_pdf = tk.Button(self, text="Resize PDF", state = 'disabled')
+        self.resize_pdf.grid(row=6, column=1, sticky="nsew", padx=5, pady=5)
 
         #Select size PDF
         self.combo_size = ttk.Combobox(
@@ -72,26 +59,32 @@ class App(tk.Frame):
             state="readonly",
             values = ["A1","A2","A3","A4","A5","A6"]
         )
-        self.combo_size.grid(row=6, column=1, sticky="nsew", padx=5, pady=5)
+        self.combo_size.grid(row=7, column=1, sticky="nsew", padx=5, pady=5)
 
         #Canva Draw
         self.pdf_display = tk.Canvas(self, width=image_escale *148, height=image_escale *210, background="white")
-        self.pdf_display.grid(row=2, column=0, padx=5, pady=5, rowspan=10)
+        self.pdf_display.grid(row=3, column=0, padx=5, pady=5, rowspan=10)
         self.pdf_display.bind('<ButtonPress-1>', self.draw_line)
         self.pdf_display.bind('<ButtonRelease-1>', self.end_draw)
         self.pdf_display.bind("<Motion>", self.update_position)
         self.icon_size = tk.Label(self)
         self.change_image(os.getcwd() + '/images/placeholder_pdf.png')
 
+
+
         #Clear Canva
-        self.clea_pdf_display = tk.Button(self, text='Clear Lines', command=lambda: self.pdf_display.delete('lines'))
-        self.clea_pdf_display.grid(row=7, column=1, sticky="nsew", padx=5, pady=5)
+        self.clea_pdf_display = tk.Button(self, text='Clear Lines', command=lambda: self.pdf_display.delete('lines'), state = 'disabled')
+        self.clea_pdf_display.grid(row=8, column=1, sticky="nsew", padx=5, pady=5)
         
     def open_file_dialog(self):
         file_path = filedialog.askopenfilename(initialdir="/home/cristoalvarado/Documents/Books To Print/", title="Select a PDF", filetypes=[("PDF", "*.pdf"), ("All files", "*.*")])
         if file_path:
-            self.direct_entry.config(text = f"{file_path}")
+            self.direct_label.config(text = f"{file_path}")
             self.show_pdf(file_path)
+            self.crop_button.config(state='normal')
+            self.booklet_print.config(state='normal')
+            self.resize_pdf.config(state='normal')
+            self.clea_pdf_display.config(state='normal')
 
     def show_pdf(self, file_path):
         png_path = os.getcwd()+'/aux/aux.png'
@@ -101,7 +94,7 @@ class App(tk.Frame):
         self.change_image(png_path)
 
     def show_pdf_to_crop(self):
-        file_path=self.direct_entry.cget('text')
+        file_path=self.direct_label.cget('text')
         global pdf_selected
         pdf_selected=True
         aux_path = os.getcwd()+'/aux/aux.pdf'
@@ -152,7 +145,12 @@ class App(tk.Frame):
         if pdf_selected:
             global click_num
             click_num = 0
-        
+
+    def bookletPDF(self):
+        file_path = self.direct_label.cget('text')
+        file = filedialog.asksaveasfile(initialdir="/home/cristoalvarado/Documents/Books To Print/Output", title="Output PDF", filetypes=[("PDF", "*.pdf"), ("All files", "*.*")])
+        if file:
+            """TODO: Aquí me quedé"""
 
 if __name__ == "__main__":
     
@@ -164,9 +162,11 @@ if __name__ == "__main__":
     root.title("Python Booklet Project")
     root.positionfrom()
 
+    root.resizable(width=False, height=False)
+
     #Window Init
     myapp = App(root)
     myapp.grid(row=1, column=1)
     myapp.columnconfigure(0, weight=1)
-    myapp.columnconfigure(1, weight=2)
+    myapp.columnconfigure(1, weight=1)
     root.mainloop()
