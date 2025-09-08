@@ -1,117 +1,119 @@
-# Portfolio Cristo Alvarado
+# Cristo's Portfolio
 
-## Description
+## 📌 About
 
-The following is a Portfolio with several projects developed in different languages by Cristo Alvarado (UlteriorCoast18). Each folder has the name of a Programming Language and inside them, is a project whose primary language is the one of the folder which is inside of.
+This portfolio showcases projects developed by **Cristo Alvarado (UlteriorCoast18)** in different programming languages.  
+It highlights skills in **Mathematics, Programming, Data Science, and Machine Learning**.  
 
-Inside each project folder there is a detailed description of it.
+The projects are organized by language and topic, with detailed descriptions inside each folder.
 
-# Projects in Python
+---
 
-There is project developed in this language and two in construction.
+## 🐍 Python Projects
 
-## Book Worm
+### Book Worm
+A project developed in **Python** and **SQLite** to help users organize their digital books.  
+Features:  
+- Add/remove/search books.  
+- Database backend with SQLite.  
+- CLI-based interface.  
 
-Book Worm is a project developed in **Python** and **SQLite** with the aim of providing the user with an application to organize the digital books in their computer.
+### Booklet Maker *(in construction)*
+Tool to crop, join, resize and prepare PDFs for **booklet printing** (bookbinding).  
+- PDF selection and preview.  
+- Cropping functionality.  
+- Future: automatic page reordering for booklet style.
 
-## Booklet Maker
+### Rubik's Cube Solver *(in construction)*
+Solver for the Rubik's Cube using Python algorithms and visualization tools.
 
-Booklet Maker is a project developed in **Python** with the goal of providing a tool for users to crop, join, resize and prepare PDF's. The main functionality of the project is prepare a PDF for booklet type impresion, that is, prepare it to bookbinding. The project is still in construction but there are some previews of the project:
+---
 
-<p align="center">
-  <img src="/assets/images/booklet_1.png" alt="Screenshot of the program start" style="width: 40%; height: 40%"/>
-</p>
+## 🔢 Python – Data Science & Math (New)
 
-### PDF Selection
+These projects showcase applications of **mathematics + programming** in real-world datasets.  
 
-First thing is you have to select some PDF to start working, when selected the program will give a preview of the PDF to edit:
+### Statistical Analysis – Income Inequality
+Exploratory Data Analysis (EDA) of income datasets (Mexico vs. USA).  
+- Probability distributions.  
+- Regression analysis.  
+- Visualizations with Matplotlib/Seaborn.  
 
-<p align="center">
-  <img src="/assets/images/booklet_2.png" alt="Screenshot of the program when selecting PDF" style="width: 60%; height: 60%"/>
-</p>
+### Machine Learning From Scratch
+Implementation of ML algorithms without high-level libraries:  
+- Linear Regression.  
+- Logistic Regression.  
+- PCA.  
+- k-Means clustering.  
 
-### Cropping
+### Numerical Methods
+Implementation of classic algorithms:  
+- Newton–Raphson for roots.  
+- Runge–Kutta for ODEs.  
+- Numerical integration (Simpson, trapezoidal).  
+- Fourier/Laplace analysis with visualization.  
 
-To Crop a PDF, first we have to select a PDF and then, we click on _Start Cropping PDF_. After that the program will show an overlap of the first 10 pages of the PDF to give the user an impression of the area that's gonna be cropped from the PDF (each page of it). Then te user can select the desired area to crop, as shown in the next picture.
+### Topological Data Analysis (TDA)
+Exploring networks and data using **graph theory** and **persistent homology**.  
 
-<p align="center">
-  <img src="/assets/images/booklet_3.png" alt="Screenshot of the program when selecting PDF ready to crop blue area" style="width: 60%; height: 60%"/>
-</p>
+---
 
-In construction...
+## 💻 C Projects
 
-## Rubik's Cube Solver
+### Dijkstra Labyrinth
+Implementation of **Dijkstra’s Algorithm** in C.  
+- Maze generator with entry (E) and exit (S).  
+- Finds and displays the shortest path.  
+- Efficient up to 200×200 mazes.  
 
-In construction...
+### Visual Ordering
+Visualization of classic sorting algorithms in the C console.  
+Inspired by Timo Bingmann’s video.  
+- Bubble Sort, QuickSort, MergeSort.  
+- Animations shown in terminal.  
 
-# Projects In C
+---
 
-There are two fully developed projects in **C**:
+## ☕ Java Projects
 
-## Dijkstra Labyrinth
+### Distributed Chess *(in construction)*
+A Chess game for two players over a local network using Java sockets.  
 
-The project is an implementation of Dijkstra Algorithm in **C**. The program generates a maze with walls shown as the character an entry called _E_ and a exit called _S_. By default the size of Labyrinth is 30*30 (in some test cases it can go up to 200 by 200, but the console has a difficult time showing it).
+---
 
-First, the program generates the maze:
+## 🌐 JavaScript Projects
 
-<p align="center">
-  <img src="/assets/images/djikstra_1.png" alt="Screenshot of the program intial execution when generates the maze" style="width: 60%; height: 60%"/>
-</p>
+### Local Chess
+Browser-based chess game using **HTML + JavaScript**.  
+- Legal move validation.  
+- Pawn promotion.  
+- Checkmate detection.  
 
-Then, the program display's the shortest path between _E_ and _S_.
+---
 
-<p align="center">
-  <img src="/assets/images/djikstra_2.png" alt="Screenshot of the program intial execution when solves the maze" style="width: 60%; height: 60%"/>
-</p>
+## 📊 SAP & Business Data (New)
 
-The program is really efficent, not taking longer than a second to solve the maze.
+Projects linking **programming + payroll systems + data science**, inspired by current SAP experience.  
 
-**Further Implementarion**: Give the user an option to choose the size of Labyrinth.
+### Payroll Data Simulator
+Synthetic employee dataset with salaries, deductions, and taxes.  
+- SQL database backend.  
+- Statistical summaries and anomaly detection.  
 
-## Visual Ordering
+### Employee Turnover Prediction
+ML model to predict employee churn using features like salary, tenure, and department.  
 
-This program is greatly inspired in this video by Timo Bingmann:
+---
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/kPRA0W1kECg/0.jpg)](https://www.youtube.com/watch?v=kPRA0W1kECg)
+## 🚀 Future Projects / Ideas
+- **Interactive dashboards** with Streamlit/Dash for statistical and ML results.  
+- **API for mathematical computations** (ODE solver, Fourier transforms) using FastAPI.  
+- **Extended TDA** for real-world networks (social, biological).  
 
-The program replicates some of the sorting algorithms in the **C** console. Here's a video of the execution:
+---
 
-[![IMAGE ALT TEXT HERE](assets/images/sorting_algorithms.png)](https://youtube.com/shorts/Nq1iBdsA_98)
+## ⚙️ Tech Stack
 
-# Java
-
-There is one project developed in Java.
-
-## Distributed Chess
-
-The project is a Java Application that's basically a Chess game played by two computers on the same local network.
-
-In construction...
-
-# Javascript
-
-## Local Chess
-
-The project is a local chess game in browser. This project was made using **HTML** and **Javascript**.
-
-<p align="center">
-  <img src="/assets/images/local_chess_1.png" alt="Screenshot of the web page in the middle of a game" style="width: 60%; height: 60%"/>
-</p>
-
-The game detects when a movement cannot be done by the player, by allowing him just to go in the green places. For example, here the black king can only move to the squares in green:
-
-<p align="center">
-  <img src="/assets/images/local_chess_2.png" alt="Screenshot of the web page in the middle of a game when king attacked" style="width: 60%; height: 60%"/>
-</p>
-
-When a pawn gets to the end of the chessboard, the program will allow the user to select the promotion piece.
-
-<p align="center">
-  <img src="/assets/images/local_chess_3.png" alt="Screenshot of the web page when pawn is being promoted" style="width: 60%; height: 60%"/>
-</p>
-
-Finally, the game will end when a player checkmates the other one. In this case, the chessboard will block and to replay again, the user has to reload the page.
-
-<p align="center">
-  <img src="/assets/images/local_chess_4.png" alt="Screenshot of the web page when game ended" style="width: 60%; height: 60%"/>
-</p>
+- **Languages**: Python, C, C++, Java, JavaScript, SQL  
+- **Libraries/Tools**: NumPy, Pandas, Matplotlib, Scikit-Learn, PyTorch/TensorFlow, Streamlit, Flask, PostgreSQL  
+- **Domains**: Data Science, Machine Learning, Numerical Methods, Topology, Payroll/Business Data  
