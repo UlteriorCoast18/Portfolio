@@ -7,7 +7,10 @@ It highlights skills in **Mathematics, Programming, Data Science, and Machine Le
 
 The projects are organized by language and topic, with detailed descriptions inside each folder.
 
----
+## Computational Mathematics
+
+Computational Mathematics involves using computers and numerical algorithms to solve complex mathematical problems in science, engineering, and other fields that are too difficult to solve analytically. In this section there are several projects involving mathematics and programming in order to solve some intersting problem.
+-Sudoku solver with backtracking
 
 ## 🐍 Python Projects
 
