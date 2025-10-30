@@ -38,19 +38,19 @@ Welcome to my programming portfolio! This repository showcases various projects 
 *Networked chess application enabling two players to compete across different computers via LAN.*
 
 <p align="center">
-  <img src="./assets/images/chess_java_register.png" alt="Chess Java Registration" width="200"/>
+  <img src="./assets/images/chess_java_register.png" alt="Chess Java Registration" height="300"/>
 </p>
 
 <p align="center">
-  <img src="./assets/images/chess_java_connection.png" alt="Chess Java Connection" width="200"/>
+  <img src="./assets/images/chess_java_connection.png" alt="Chess Java Connection" height="300"/>
 </p>
 
 <p align="center">
-  <img src="./assets/images/ches_java_screen.png" alt="Chess Java Screen" width="200"/>
+  <img src="./assets/images/ches_java_screen.png" alt="Chess Java Screen" height="300"/>
 </p>
 
 <p align="center">
-  <img src="./assets/images/chess_java_movement.png" alt="Chess Java Movement" width="200"/>
+  <img src="./assets/images/chess_java_movement.png" alt="Chess Java Movement" height="300"/>
 </p>
 
 
