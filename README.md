@@ -11,11 +11,15 @@ Welcome to my programming portfolio! This repository showcases various projects 
 #### **Dijkstra's Labyrinth Solver**
 *Implementation of Dijkstra's algorithm that generates random labyrinths and finds optimal paths between entrance and exit.*
 
-<img src="./assets/images/djikstra_1.png" alt="Dijkstra Labyrinth" width="300"/>
+<p>
+  <img src="./assets/images/djikstra_1.png" alt="Dijkstra Labyrinth" width="300"/>
+<\p>
 
 *Example: Generated labyrinth with solution path highlighted by the letter `O`, letters `E` and `S` represent the entrance and exit, respectively*
 
-<img src="./assets/images/djikstra_2.png" alt="Dijkstra Labyrinth" width="300"/>
+<p>
+  <img src="./assets/images/djikstra_2.png" alt="Dijkstra Labyrinth" width="300"/>
+<\p>
 
 #### **Visual Sorting Algorithms**
 *Visual demonstration of various sorting algorithms inspired by [15 Sorting Algorithms in 6 Minutes](https://www.youtube.com/watch?v=kPRA0W1kECg).*
