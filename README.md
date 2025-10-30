@@ -11,7 +11,7 @@ Welcome to my programming portfolio! This repository showcases various projects 
 #### **Dijkstra's Labyrinth Solver**
 *Implementation of Dijkstra's algorithm that generates random labyrinths and finds optimal paths between entrance and exit.*
 
-![Dijkstra Labyrinth](./assets/images/djikstra_1.png)
+<img src="./assets/images/djikstra_1.png" alt="Dijkstra Labyrinth" width="400"/>
 
 *Example: Generated labyrinth with solution path highlighted by the letter `O`, letters `E` and `S` represent the entrance and exit, respectively*
 
