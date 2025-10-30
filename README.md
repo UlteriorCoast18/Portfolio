@@ -20,9 +20,13 @@ Welcome to my programming portfolio! This repository showcases various projects 
 #### **Visual Sorting Algorithms**
 *Visual demonstration of various sorting algorithms inspired by [15 Sorting Algorithms in 6 Minutes](https://www.youtube.com/watch?v=kPRA0W1kECg).*
 
-[![Sorting Algorithms Demo](./assets/images/sorting_algorithms.png)](https://youtube.com/shorts/Nq1iBdsA_98?feature=share)
+<p align="center">
+  <a href="https://youtube.com/shorts/Nq1iBdsA_98?feature=share">
+    <img src="./assets/images/sorting_algorithms.png" alt="Sorting Algorithms Demo" width="200"/>
+  </a>
+</p>
 
-*Click thumbnail to watch the full demo video*
+*Click image to watch the full demo video*
 
 ### ☕ Java
 
