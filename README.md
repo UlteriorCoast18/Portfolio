@@ -39,11 +39,17 @@ Welcome to my programming portfolio! This repository showcases various projects 
 
 <p align="center">
   <img src="./assets/images/chess_java_register.png" alt="Chess Java Registration" width="200"/>
+</p>
 
+<p align="center">
   <img src="./assets/images/chess_java_connection.png" alt="Chess Java Connection" width="200"/>
+</p>
 
-  <img src="./assets/images/chess_java_screen.png" alt="Chess Java Screen" width="200"/>
+<p align="center">
+  <img src="./assets/images/ches_java_screen.png" alt="Chess Java Screen" width="200"/>
+</p>
 
+<p align="center">
   <img src="./assets/images/chess_java_movement.png" alt="Chess Java Movement" width="200"/>
 </p>
 
