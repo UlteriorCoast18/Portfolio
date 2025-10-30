@@ -53,16 +53,30 @@ Welcome to my programming portfolio! This repository showcases various projects 
   <img src="./assets/images/chess_java_movement.png" alt="Chess Java Movement" height="200"/>
 </p>
 
-
 *Features: Real-time move validation, game state synchronization, and movement chat functionality*
 
 ### 🐍 Python
 
 #### **Book Worm** 📚
-*Digital library management system with intelligent book recommendations.*
+*Digital library management system.*
+*🚧 Work in Progress*
+
 
 #### **Booklet Project** 
 *PDF generation and document processing toolkit.*
+
+<p align="center">
+  <img src="./assets/images/booklet_1.png" alt="Booklet Screen 1" height="200"/>
+</p>
+
+<p align="center">
+  <img src="./assets/images/booklet_2.png" alt="Booklet Screen 2" height="200"/>
+</p>
+
+<p align="center">
+  <img src="./assets/images/booklet_3.png" alt="Booklet Screen 1" height="200"/>
+</p>
+
 
 #### **Rubik's Cube Solver** 🧊 
 *3D visualization of Rubik's Cube with machine learning integration for automated solving.*
