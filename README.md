@@ -11,13 +11,13 @@ Welcome to my programming portfolio! This repository showcases various projects 
 #### **Dijkstra's Labyrinth Solver**
 *Implementation of Dijkstra's algorithm that generates random labyrinths and finds optimal paths between entrance and exit.*
 
-<p>
+<p align="center">
   <img src="./assets/images/djikstra_1.png" alt="Dijkstra Labyrinth" width="300"/>
 <\p>
 
 *Example: Generated labyrinth with solution path highlighted by the letter `O`, letters `E` and `S` represent the entrance and exit, respectively*
 
-<p>
+<p align="center">
   <img src="./assets/images/djikstra_2.png" alt="Dijkstra Labyrinth" width="300"/>
 <\p>
 
@@ -37,8 +37,18 @@ Welcome to my programming portfolio! This repository showcases various projects 
 #### **Distributed Chess Game**
 *Networked chess application enabling two players to compete across different computers via LAN.*
 
-![Chess Game Interface](./images/chess-interface.png)
-*Features: Real-time move validation, game state synchronization, and chat functionality*
+<p align="center">
+  <img src="./assets/images/chess_java_register.png" alt="Chess Java Registration" width="200"/>
+
+  <img src="./assets/images/chess_java_connection.png" alt="Chess Java Connection" width="200"/>
+
+  <img src="./assets/images/chess_java_screen.png" alt="Chess Java Screen" width="200"/>
+
+  <img src="./assets/images/chess_java_movement.png" alt="Chess Java Movement" width="200"/>
+</p>
+
+
+*Features: Real-time move validation, game state synchronization, and movement chat functionality*
 
 ### 🐍 Python
 
