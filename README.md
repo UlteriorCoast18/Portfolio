@@ -89,11 +89,17 @@ Welcome to my programming portfolio! This repository showcases various projects 
 ### **Perceptron Classifier**
 *Basic neural network implementation for flower classification based on petal dimensions.*
 
-![Perceptron Results](./images/perceptron-chart.png)
+<p align="center">
+  <img src="./assets/images/perceptron_visual_implementation_iris_dataset.png" alt="Perceptron Implementation" height="200"/>
+</p>
 *Classification results on iris dataset*
 
 ### **Adaline Network**
 *Advanced classifier similar to perceptron with different activation function for improved accuracy.*
+
+<p align="center">
+  <img src="./assets/images/adaline_implementation_graph.png" alt="Perceptron Implementation" height="200"/>
+</p>
 
 ---
 
