@@ -4,6 +4,15 @@ Welcome to my programming portfolio! This repository showcases various projects 
 
 ---
 
+
+## 🤖 Machine Learning
+
+#### **Workforce Intelligence & Payroll Optimization System**
+
+In construction...
+
+---
+
 ## 🎯 Projects by Language
 
 ### 🔷 C Programming
@@ -81,25 +90,6 @@ Welcome to my programming portfolio! This repository showcases various projects 
 #### **Rubik's Cube Solver** 🧊 
 *3D visualization of Rubik's Cube with machine learning integration for automated solving.*
 *🚧 Work in Progress*
-
----
-
-## 🤖 Machine Learning
-
-### **Perceptron Classifier**
-*Basic neural network implementation for flower classification based on petal dimensions.*
-
-<p align="center">
-  <img src="./assets/images/perceptron_visual_implementation_iris_dataset.png" alt="Perceptron Implementation" height="200"/>
-</p>
-*Classification results on iris dataset*
-
-### **Adaline Network**
-*Advanced classifier similar to perceptron with different activation function for improved accuracy.*
-
-<p align="center">
-  <img src="./assets/images/adaline_implementation_graph.png" alt="Perceptron Implementation" height="200"/>
-</p>
 
 ---
 
