@@ -1,0 +1,82 @@
+# ============================================
+# Python
+# ============================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.env
+.venv
+venv/
+ENV/
+.ipynb_checkpoints/
+
+
+# ============================================
+# Jupyter Notebooks
+# ============================================
+.ipynb_checkpoints/
+*.checkpoint.ipynb
+
+
+# ============================================
+# Data (DO NOT UPLOAD RAW OR SENSITIVE DATA)
+# ============================================
+data/raw/*
+data/tmp/*
+data/private/*
+data/raw/**
+
+# allow README inside data/raw
+!data/raw/README.md
+
+# processed data optional (keep or ignore)
+# Uncomment the next line if you DON'T want to upload processed data:
+# data/processed/*
+
+
+# ============================================
+# Model Artifacts
+# ============================================
+models/*.joblib
+models/*.pkl
+models/*.h5
+models/*.pt
+models/*.pth
+models/*.onnx
+
+
+# ============================================
+# Logs & Auto-generated files
+# ============================================
+*.log
+logs/
+*.tmp
+*.temp
+
+
+# ============================================
+# Streamlit cache
+# ============================================
+.streamlit/
+**/.streamlit/
+**/.cache/
+
+
+# ============================================
+# VS Code / IDE
+# ============================================
+.vscode/
+.idea/
+
+
+# ============================================
+# OS-specific
+# ============================================
+.DS_Store
+Thumbs.db

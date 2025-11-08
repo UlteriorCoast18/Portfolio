@@ -1,0 +1,115 @@
+body{
+    background-color: white;
+}
+
+button.buttonN{
+    width: 64px;
+    height: 64px;
+    background: #888888;
+}
+
+button.buttonB{
+    width: 64px;
+    height: 64px;
+    background: #dadada;
+}
+
+button:hover{
+    background: #b8cde0;
+}
+
+.mainDiva{
+    background: white;
+    width: 512px;
+    height: 512px;
+}
+
+.coronarDiva{
+    background: white;
+    width: 256px;
+    height: 64px;
+}
+
+button.peonN{
+    background-image:url("IMG/peonN.png");
+    background-size: 35px 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.peonB{
+    background-image:url("IMG/peonB.png");
+    background-size: 35px 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.caballoN{
+    background-image:url("IMG/caballoN.png");
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.caballoB{
+    background-image:url("IMG/caballoB.png");
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.alfilN{
+    background-image:url("IMG/alfilN.png");
+    background-size: 51px 52px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.alfilB{
+    background-image:url("IMG/alfilB.png");
+    background-size: 51px 52px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.torreN{
+    background-image:url("IMG/torreN.png");
+    background-size: 39px 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.torreB{
+    background-image:url("IMG/torreB.png");
+    background-size: 39px 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.damaN{
+    background-image:url("IMG/damaN.png");
+    background-size: 52px 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.damaB{
+    background-image:url("IMG/damaB.png");
+    background-size: 52px 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.reyN{
+    background-image:url("IMG/reyN.png");
+    background-size: 52px 52px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.reyB{
+    background-image:url("IMG/reyB.png");
+    background-size: 52px 52px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
