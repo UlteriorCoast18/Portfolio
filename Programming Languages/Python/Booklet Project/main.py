@@ -21,6 +21,8 @@ image_escale = 4
 size_booklet = 6
 file_path = ""
 
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
 class App(tk.Frame):
     def __init__(self, master):
         super().__init__(master)
@@ -70,14 +72,21 @@ class App(tk.Frame):
         self.icon_size = tk.Label(self)
         self.change_image(os.getcwd() + '/images/placeholder_pdf.png')
 
-
-
         #Clear Canva
         self.clea_pdf_display = tk.Button(self, text='Clear Lines', command=lambda: self.pdf_display.delete('lines'), state = 'disabled')
         self.clea_pdf_display.grid(row=8, column=1, sticky="nsew", padx=5, pady=5)
+
+
+
+
+
+
+        # Botón de ejemplo para mostrar barra de progreso
+        #self.example_button = tk.Button(self, text="EJEMPLO", command=self.ejemplo_progress)
+        #self.example_button.grid(row=9, column=1, sticky="nsew", padx=5, pady=5)
         
     def open_file_dialog(self):
-        file_path = filedialog.askopenfilename(initialdir="/home/cristoalvarado/Documents/Books To Print/", title="Select a PDF", filetypes=[("PDF", "*.pdf"), ("All files", "*.*")])
+        file_path = filedialog.askopenfilename(initialdir=os.path.join(base_dir,"input"), title="Select a PDF", filetypes=[("PDF", "*.pdf"), ("All files", "*.*")])
         if file_path:
             self.direct_label.config(text = f"{file_path}")
             self.show_pdf(file_path)
@@ -94,16 +103,35 @@ class App(tk.Frame):
         self.change_image(png_path)
 
     def show_pdf_to_crop(self):
-        file_path=self.direct_label.cget('text')
+        file_path = self.direct_label.cget('text')
         global pdf_selected
-        pdf_selected=True
-        aux_path = os.getcwd()+'/aux/aux.pdf'
-        png_path = os.getcwd()+'/aux/aux.png'
-        pm.overlay_pdf(file_path,aux_path)
-        pm.pdf_to_png(aux_path,png_path)
+        pdf_selected = True
 
-        #Change frame image
-        self.change_image(png_path)
+        def task(progress_bar, progress_label):
+            aux_path = os.path.join(os.getcwd(), 'aux', 'aux.pdf')
+            png_path = os.path.join(os.getcwd(), 'aux', 'aux.png')
+
+            # Función que actualizará la barra de progreso
+            def update_progress(pct):
+                progress_bar['value'] = pct
+                progress_label.config(text=f"{pct}%")
+                progress_bar.update_idletasks()
+                progress_label.update_idletasks()
+
+            # Llamar overlay_pdf con callback
+            pm.overlay_pdf(file_path, aux_path, progress_callback=update_progress)
+            pm.pdf_to_png(aux_path, png_path)
+
+            # Mostrar imagen final
+            self.change_image(png_path)
+
+            # Asegurar 100% al final
+            progress_bar['value'] = 100
+            progress_label.config(text="100%")
+
+        self.show_progress(task_func=task)
+
+
 
     def change_image(self, png_path):
         self.img = Image.open(png_path)
@@ -148,9 +176,67 @@ class App(tk.Frame):
 
     def bookletPDF(self):
         file_path = self.direct_label.cget('text')
-        file = filedialog.asksaveasfile(initialdir="/home/cristoalvarado/Documents/Books To Print/Output", title="Output PDF", filetypes=[("PDF", "*.pdf"), ("All files", "*.*")])
+        file = filedialog.asksaveasfile(initialdir=os.path.join(base_dir,"output"), title="Output PDF", filetypes=[("PDF", "*.pdf"), ("All files", "*.*")])
         if file:
             """TODO: Aquí me quedé"""
+
+    """
+    def ejemplo_progress(self):
+        # Crear ventana Toplevel para la barra de progreso
+        progress_window = tk.Toplevel(self.master)
+        progress_window.title("Ejemplo de carga")
+        progress_window.geometry("350x100")
+        progress_window.resizable(False, False)
+
+        # Barra de progreso
+        progress_bar = ttk.Progressbar(progress_window, length=300, mode='determinate')
+        progress_bar.pack(pady=10)
+
+        # Label de porcentaje
+        progress_label = tk.Label(progress_window, text="0%")
+        progress_label.pack()
+
+        # Función que simula carga
+        def run_progress():
+            for i in range(101):
+                time.sleep(0.03)  # Simula trabajo
+                progress_bar['value'] = i
+                progress_label.config(text=f"{i}%")
+                progress_bar.update_idletasks()
+                progress_label.update_idletasks()
+            progress_window.destroy()  # Cierra ventana al terminar
+
+        # Ejecutar en hilo para no congelar la UI
+        threading.Thread(target=run_progress).start()
+    """
+        
+    def show_progress(self, task_func=None):
+        progress_window = tk.Toplevel(self.master)
+        progress_window.title("Processing PDF")
+        progress_window.geometry("350x100")
+        progress_window.resizable(False, False)
+
+        progress_bar = ttk.Progressbar(progress_window, length=300, mode='determinate')
+        progress_bar.pack(pady=10)
+
+        progress_label = tk.Label(progress_window, text="0%")
+        progress_label.pack()
+
+        def run_task():
+            if task_func:
+                # task_func recibe una función callback para actualizar progreso
+                task_func(progress_bar, progress_label)
+            else:
+                # Simulación de carga
+                for i in range(101):
+                    time.sleep(0.03)
+                    progress_bar['value'] = i
+                    progress_label.config(text=f"{i}%")
+                    progress_bar.update_idletasks()
+                    progress_label.update_idletasks()
+            progress_window.destroy()
+
+        threading.Thread(target=run_task).start()
 
 if __name__ == "__main__":
     

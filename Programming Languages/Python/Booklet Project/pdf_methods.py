@@ -4,11 +4,11 @@ from pdf2image import convert_from_path
 from os import remove
 import os
 
-def resize_pdf_A5(pdf_path, output_path, add_pages):
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
+def resize_pdf_A5(pdf_path, output_path, add_pages, progress_callback=None):
     pdf_reader = PdfReader(pdf_path)
     writer = PdfWriter()
-
-    #First, rescale document:
     num_pages = len(pdf_reader.pages)
 
     for i in range(num_pages):
@@ -21,41 +21,38 @@ def resize_pdf_A5(pdf_path, output_path, add_pages):
         w = float(page.mediabox.width)
 
         scale_file = min(A5_h/h,A5_w/w)
-
-        #Page transformation
         transform = Transformation().scale(scale_file,scale_file).translate((A5_w-scale_file*w)/2,(A5_h-scale_file*h)/2)
         page.add_transformation(transform)
         page.cropbox = RectangleObject((0, 0, A5_w, A5_h))
 
-        #Prepare A5 blank page
         page_A5 = PageObject.create_blank_page(width = A5_w, height = A5_h)
         page.mediabox = page_A5.mediabox
-        #Merge both pages
         page_A5.merge_page(page)
         writer.add_page(page_A5)
 
-        #Show completion
-        print(str(int(100*i/num_pages))+'%')
-    
-    #In case we need to add some more pages
+        # Calcular porcentaje y llamar al callback si existe
+        pct = int(100*(i+1)/num_pages)
+        print(f"{pct}%")
+        if progress_callback:
+            progress_callback(pct)
 
     if add_pages:
-        print('Adding pages')
-        num_pages = num_pages % 4
-        while num_pages % 4 != 0:
-            A5_w = PaperSize.A5.width
-            A5_h = PaperSize.A5.height
+        num_pages_mod = num_pages % 4
+        while num_pages_mod != 0:
             page_A5 = PageObject.create_blank_page(width = A5_w, height = A5_h)
             writer.add_page(page_A5)
-            num_pages += 1
+            num_pages_mod += 1
 
     writer.write(output_path)
     print('Finished reescaling and/or adding pages')
-    return 0;
+    if progress_callback:
+        progress_callback(100)
+    return 0
+
 
 def prepare_print(pdf_path, output_path, size_booklet):
     #Auxiliar path to generate resized and correct number of pages for pdf
-    aux_path = '/home/cristoalvarado/aux_1.pdf'
+    aux_path = os.path.join(base_dir, "aux", "aux_1.pdf")
     resize_pdf_A5(pdf_path, aux_path, 1)
     
     #Now we open auxiliar pdf with extra pages
@@ -98,10 +95,10 @@ def prepare_print(pdf_path, output_path, size_booklet):
     remove(aux_path)
     print('Finished Booklet')
 
-def overlay_pdf(pdf_path, output_path):
-    #Auxiliar path to generate overlaped pdf file
-    aux_path = '/home/cristoalvarado/aux_2.pdf'
-    resize_pdf_A5(pdf_path, aux_path, 0)
+def overlay_pdf(pdf_path, output_path, progress_callback=None):
+    aux_path = os.path.join(base_dir, "aux", "aux_2.pdf")
+    # Pasamos callback a resize_pdf_A5
+    resize_pdf_A5(pdf_path, aux_path, 0, progress_callback)
 
     pdf_reader = PdfReader(aux_path)
     writer = PdfWriter()
@@ -121,11 +118,13 @@ def overlay_pdf(pdf_path, output_path):
     writer.write(output_path)
     remove(aux_path)
     print('Finished Overlay')
+    if progress_callback:
+        progress_callback(100)
 
 def showcase_pdf(pdf_path,output_path):
     #Output path is a png image and pdf_path is the original pdf
     pdf_reader = PdfReader(pdf_path)
-    aux_path = os.getcwd()+'/aux/aux.pdf'
+    aux_path = os.path.join(base_dir, "aux", "aux.pdf")
 
     #Obtain and generate a pdf with only the first page
     writer = PdfWriter()
