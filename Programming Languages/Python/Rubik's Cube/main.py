@@ -139,6 +139,7 @@ def main():
 
     # Activar picking de superficie
     pl.enable_surface_point_picking(callback=callback, show_point=False)
+
     #Mostrar plot
     pl.show()
 
